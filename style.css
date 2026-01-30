@@ -1,0 +1,860 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root {
+    --BG-color: rgb(216, 216, 216);
+    --BH-color: rgba(185, 177, 177, 0.267);
+    --BE-color: rgb(42, 182, 0);
+    --TX-color: #000000;
+    --T-color: #ffffff;
+} 
+body {
+    background: var(--BG-color);
+    color: var(--TX-color);
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+    
+    /* L'entete du site dans sa totalite */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem calc((100vw - 1000px) / 4);
+    background-color: var(--TX-color);
+    color: var(--T-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+header .logo h1 a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--T-color);
+    cursor: pointer;
+    transition: .3s ease;
+
+}
+header .logo h1 a:hover {
+    color: var(--BG-color);
+}
+header .navEl {
+    display: flex;
+    gap: 1rem;
+}
+header .navEl .navLink{
+    text-decoration: none;
+    color: var(--BG-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: .08rem .8rem;
+    /* border: 2px solid; */
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+header .navEl .navLink:hover{
+    background: var(--BE-color);
+    color: var(--T-color);
+}
+header .navEl .navLink.active{
+    background: var(--BE-color);
+    color: var(--T-color);
+}
+header .toggle {
+    display: none;
+}
+  
+
+    /* La section de couverture (preview)    */
+Section.preview {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+Section.preview .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("Resources/BG_1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+Section.preview .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-position: center;  */
+    /* aspect-ratio: ; */
+}
+section.preview .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--BH-color);
+    width: 100%;
+    height: 100%;
+}
+section.preview .overlay p {
+    font-size: 1.3rem;
+}
+section.preview a {
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    border: none;
+    border-radius: 12px;
+    background: var(--BE-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s ease;
+    text-decoration: none;
+    color: var(--T-color);
+}
+
+    /* La section des categrie de demenagement */
+section.hero {
+    width: 100%;
+    padding: .5rem calc((100vw - 1000px) / 4);
+    padding-bottom: 1rem;
+}
+/* section.hero .mode p{
+    margin-left: 5rem;
+} */
+section.hero .services {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 4%;
+}
+section.hero .services .card {
+    /* border: 2px solid black; */
+    border-radius: 12px;
+    width: 100%;
+    height: 350px;
+    padding: .5rem;
+    box-shadow: 0px 0px 8px var(--TX-color);
+    background: var(--T-color);
+    transition: .3s ease;
+}
+section.hero .services .card:hover {
+    transform: scale(1.002) translateY(-5px);
+}
+section.hero .services .card .img {
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: .3s ease;
+
+}
+section.hero .services .card .img:hover {
+    box-shadow: 0 0 4px var(--TX-color);
+    
+}
+section.hero .services .card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s ease;
+}
+section.hero .services .card .img img:hover {
+    transform: scale(1.02);
+}
+section.hero .About .likes a{
+    text-decoration: none;
+    color: var(--BE-color);
+}
+section.hero .select {
+    display: flex;
+    justify-content: center;
+}
+section.hero .select  a{
+    margin-top: 1rem;
+    width: 90%;
+    height: 35px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    background: var(--TX-color);
+    color: var(--T-color);
+    transition: .3s ease;
+}
+section.hero .select  a:hover {
+    background: var(--BE-color);
+}
+
+
+    /* Section vue d'eco */
+section.eco {
+    margin-top: 1.5rem;
+    padding: .5rem calc((100vw - 1000px) / 4);
+}
+section.eco .delai{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: .5rem;
+    background: var(--TX-color);
+    border: 2px solid;
+    border-radius: 12px;
+
+}
+section.eco .delai .taffDrivers {
+    width: 25%;
+    padding: .5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid var(--BG-color);
+}
+section.eco .delai .taffDrivers:last-child {
+    border: none;
+}
+section.eco .delai .taffDrivers h4 {
+    color: var(--T-color);
+}
+section.eco .delai .taffDrivers p {
+    color:  var(--BG-color);
+}
+
+
+    /* Section vue des partenariats */
+section.partenariat {
+    margin: 2rem 0;
+    padding: .5rem calc((100vw - 1000px) / 4);
+}
+section.partenariat .container {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    border-radius: 12px;
+    background: var(--TX-color);
+    box-shadow: 0 0 10px 5px var(--T-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+section.partenariat .container .partenariatTx {
+    width: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.partenariat .container .partenariatTx h2 {
+    margin: -2rem 4rem 1rem;
+    color: var(--T-color);
+}
+section.partenariat .container .partenariatTx p {
+    margin: 0rem 2rem 0 1rem;
+    color: var(--BG-color);
+}
+section.partenariat .container .partenariatTx button {
+    width: 150px;
+    padding: .4rem;
+    margin: 1rem 0 -2.5rem ;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+section.partenariat .container .partenariatTx button a {
+    text-decoration: none;
+    color: var(--TX-color);
+    transition: .3s ease;
+
+}
+
+section.partenariat .container .partenariatTx button:hover {
+    background: var(--BE-color);
+}
+section.partenariat .container .partenariatTx button:hover a {
+    color: var(--T-color);
+}
+section.partenariat .container .patenariatImg {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section.partenariat .container .patenariatImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+    /* Section De Commentaire et  d'inscription a la clientel fidel */
+section.formulaire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem calc((100vw - 1000px) / 4);
+    margin-bottom: 1rem;
+}
+section.formulaire .commentaire {
+    width: 60%;
+    height: 100px;
+    border: none;
+    box-shadow: 0 0 4px var(--TX-color);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+section.formulaire .commentaire form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+section.formulaire .commentaire form textarea {
+    outline: none;
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+    font-size: 1.2rem;
+}
+section.formulaire .commentaire form button {
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--BG-color);
+    border-radius: 10px;
+    border: none;
+}
+section.formulaire .inscription {
+    width: 60%;
+    border: none;
+    border-radius: 20px;
+    background: var(--T-color);
+    box-shadow: 0 0 4px var(--TX-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 .6rem;
+    position: relative;
+    transition: .3s ease;
+}
+section.formulaire .inscription h1 {
+    transform: translateY(60%);
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 20px;
+    transition: .3s ease;
+}
+section.formulaire .inscription:hover h1 {
+    transform: translateY(-50%);
+    color: var(--T-color);
+    background: var(--TX-color);
+
+}
+section.formulaire .inscription form {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section.formulaire .inscription form input {
+    min-width: 100%;
+    height: 40px;
+    margin: .5rem 0;
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 12px;
+    background: var(--BG-color);
+    padding-left: 10px;
+    transition: .3s ease;
+    outline-color: var(--BE-color);
+}
+section.formulaire .inscription form input:hover {
+    transform: scaleY(1.05);
+}
+section.formulaire .inscription form input:focus {
+    border-bottom: none;
+}
+section.formulaire .inscription form button {
+    width: 60%;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    color: var(--T-color);
+    background: var(--BE-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: .3s ease;
+}
+section.formulaire .inscription form button:hover {
+    transform: scale(1.02);
+}
+
+    /* Footer de la page  */
+footer {
+    width: 100%;
+    /* height: 60vh;  */
+    display: flex;
+    flex-direction: column;
+    padding: .5rem calc((100vw - 1000px) / 4);
+    background-color: var(--TX-color);
+    color: var(--T-color);
+    position: relative;
+}
+footer .logo h1 {
+    margin-top: 1.5rem;
+}
+footer .logo h1 a {
+    margin-top: 5rem;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: var(--T-color);
+    cursor: pointer;
+    transition: .3s ease;
+}
+footer .logo h1 a:hover {
+    color: var(--BG-color);
+}
+footer .look_me {
+    display: flex;
+    /* align-items: center; */
+    gap: 2rem;
+    position: relative;
+}
+footer .look_me .navEl {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+footer .navEl .navLink{
+    text-decoration: none;
+    color: var(--BG-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: .3s ease;
+    position: relative;
+}
+footer .navEl .navLink:hover{
+    color: var(--BE-color);
+}
+footer .navEl .navLink.active{
+    color: var(--BE-color);
+}
+footer .navEl .navLink.active::after {
+    content: "";
+    position: absolute;
+    left: -15%;
+    /* bottom: 25%; */
+    top: 20%;
+    /* transform: translateY(50%); */
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--BE-color);
+    transform: scale(1);
+    transform-origin: center;
+}
+footer .navEl .navLink::after {
+    content: "";
+    position: absolute;
+    left: -15%;
+    /* bottom: 25%; */
+    top: 20%;
+    /* transform: translateY(50%); */
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--BE-color);
+    transform: scale(0);
+    transform-origin: center;
+}
+footer .navEl a:hover::after {
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+footer .conclusion {
+    width: 35%;
+    /* font-size: 1rem; */
+}
+
+/* CONTENEUR */
+footer .cards {
+    width: 500px;
+    height: 200px;
+    background: var(--BG-color);
+    border-radius: 12px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* CARDS */
+footer .cards .card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    /* background: #04a509; */
+    color: var(--TX-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeCarousel 18s infinite;
+}
+
+/* DÉCALAGE PROPRE */
+footer .cards .card:nth-child(1) { animation-delay: 0s; }
+footer .cards .card:nth-child(2) { animation-delay: 4s; }
+footer .cards .card:nth-child(3) { animation-delay: 8s; }
+footer .cards .card:nth-child(4) { animation-delay: 12s; }
+footer .cards .card:nth-child(5) { animation-delay: 16s; }
+
+/* ANIMATION FADE */
+@keyframes fadeCarousel {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    20%  { opacity: 1; }
+    30%  { opacity: 0; }
+    80% { opacity: 0; }
+}
+footer .cards .card .icontent {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+footer .cards .card .icontent img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+footer .contact .voie {
+    display: flex;
+    gap: 2rem;
+}
+footer .contact .voie a {
+    width: 40px;
+    height: 40px;
+    margin-top: 1rem;
+    padding: .5rem;
+    text-decoration: none;
+    text-align: center;
+    color: var(--T-color);
+    border-radius: 50%;
+    background: var(--BE-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s ease;
+}
+footer .contact .voie a:hover {
+    width: 100%;
+    transition: .5s ease;
+
+}
+footer .contact .voie a:hover::after {
+    content: attr(data-model);
+    margin-left: .5rem;
+    transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+
+/* responsive a 850px */
+@media (max-width: 950px) {
+    header {
+        padding: 0 1rem;
+        height: 80px;
+    }
+    header .navEl {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 55%;
+        height: 50vh;
+        flex-direction: column;
+        background: var(--BE-color);
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        z-index: 100;
+    }
+    header .navEl .navLink {
+        /* font-size: 1.5rem; */
+        padding: 1rem 1rem;
+    }
+
+    header .toggle {
+        display: block;
+    }
+    /* section.preview {
+        margin-top: 5%;
+        top: 0;
+    } */
+    section.preview .overlay {
+        align-items: center;
+    }
+    section.preview .overlay h1 {
+        font-size: 1.8rem;
+    }
+    section.preview .overlay p {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 1rem 5rem;
+    }
+    section.preview .overlay button {
+        width: 230px;
+        font-size: 1.45rem;
+    }
+    section.hero {
+        padding: 1rem;
+    }
+    section.hero .mode h1 {
+        font-size: 1.55rem;
+    }
+    section.hero .mode p {
+        font-size: 1.2;
+    }
+    section.hero .About h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    section.hero .services {
+        width: 100%;
+    }
+
+    section.eco {
+        padding: 1rem;
+    }
+    section.eco .delai .taffDrivers p {
+        font-size: 1rem;
+    }
+    section.partenariat {
+        padding: 1rem;
+    }
+    section.formulaire {
+        padding: 0 1rem;
+    }
+    
+    /* responsive de la barre de navigation */
+    
+    footer {
+        padding: 0 1rem 1.5rem;
+    }
+    footer .cards {
+        width: 350px;
+    }
+}
+
+
+
+/* responsive a 450px */
+@media (max-width: 550px) {
+    header {
+        height: 60px;
+    }
+    header .logo h1 a {
+        font-size: 1.2rem;
+    }
+    /* responsive de la barre de navigation */
+    header .navEl {
+        width: 70%;
+    }
+    section.hero .services {
+        flex-direction: column;
+    }
+    section.hero .services .card {
+        margin: .5rem 0;
+    }
+    section.preview .overlay {
+        align-items: center;
+    }
+    section.preview .overlay h1 {
+        font-size: 1.6rem;
+    }
+    section.preview .overlay p {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 1rem;
+    }
+    section.preview .overlay button {
+        width: 200px;
+        font-size: 1.2rem;
+    }
+
+    section.eco .delai .taffDrivers p {
+        font-size: .8rem;
+    }
+    section.partenariat .container {
+        background: transparent;
+        height: 600px;
+    }
+    section.partenariat .container .partenariatTx {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 1rem;
+    }
+    section.partenariat .container .partenariatTx h2 {
+        margin: -2rem 0 0;
+    }
+    section.partenariat .container .partenariatTx p {
+        margin: 0;
+    }
+    section.partenariat .container .patenariatImg {
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+    section.formulaire .commentaire {
+        width: 100%;
+    }
+    section.formulaire .inscription {
+        width: 100%;
+    }
+    section.formulaire .inscription h1 {
+        font-size: 1.3rem;
+        margin-bottom: -.6rem;
+    }
+    
+
+    footer .logo{
+        display: flex;
+        justify-content: center;
+    }
+    footer .logo h1 a {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    footer .look_me {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .conclusion  {
+        width: 100%;
+    }
+    footer .cards {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        /* top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto; */
+    }
+    footer .cards .card {
+        width: 100%;
+    }
+    footer .navEl .navLink{
+        font-size: 1.1rem;
+    }
+}
+
+/* ===============================
+   NAVBAR MOBILE - BURGER MENU
+   =============================== */
+
+/* Animation ouverture du menu */
+header .navEl {
+    transition: left 0.3s ease;
+}
+
+header .navEl.open {
+    left: 0;
+}
+
+/* Bouton burger */
+header .toggle {
+    width: 30px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+}
+
+header .toggle::before,
+header .toggle::after,
+header .toggle span {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .toggle::before {
+    top: 0;
+}
+
+header .toggle span {
+    top: 9px;
+}
+
+header .toggle::after {
+    bottom: 0;
+}
+
+/* Animation X quand menu ouvert */
+header .toggle.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+header .toggle.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+
+header .toggle.active span {
+    opacity: 0;
+}
